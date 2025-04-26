@@ -1,0 +1,120 @@
+# depslib dependency file v1.0
+1745361499 source:c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\main.cpp
+	<iostream>
+	<vector>
+	<map>
+	"Piece.h"
+	"Client.h"
+	"Employe.h"
+	"Mecanicien.h"
+	"Vehicule.h"
+	"Voiture.h"
+	"VoitureElectrique.h"
+	"Moto.h"
+	"Reparation.h"
+	"Facture.h"
+	"Garage.h"
+	"Mecanicien.h"
+	"MecanicienSpecialiste.h"
+	<fstream>
+
+1745350745 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\vehicule.h
+	"VehiculeBase.h"
+	"Reparation.h"
+	<string>
+	<vector>
+
+1745349200 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\vehiculebase.h
+	<string>
+
+1745172081 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\reparation.h
+	<string>
+	<iostream>
+
+1745166401 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\client.h
+	"Personne.h"
+	"Vehicule.h"
+	<fstream>
+	<iostream>
+	<vector>
+	<string>
+
+1745166768 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\personne.h
+	<iostream>
+	<string>
+
+1745326168 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\employe.h
+	<vector>
+	<iostream>
+	<stdexcept>
+	"Personne.h"
+
+1745172949 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\mecanicien.h
+	"Personne.h"
+	"Vehicule.h"
+	<vector>
+	<iostream>
+	<stdexcept>
+
+1745324086 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\garage.h
+	<vector>
+	<iostream>
+	<stdexcept>
+	"Mecanicien.h"
+	"Client.h"
+
+1745360010 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\piece.h
+	<iostream>
+	<map>
+	<fstream>
+	<string>
+	<stdexcept>
+
+1745354928 source:c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\code.cpp
+	"Client.h"
+	<iostream>
+	<algorithm>
+	"Employe.h"
+	<iostream>
+	"Garage.h"
+	"Mecanicien.h"
+	"MecanicienSpecialiste.h"
+	<iostream>
+	"Personne.h"
+	<iostream>
+	"Facture.h"
+	"Piece.h"
+	"VehiculeBase.h"
+	<iostream>
+	"Vehicule.h"
+	<iostream>
+	"Voiture.h"
+	"VoitureElectrique.h"
+	"Moto.h"
+	"Reparation.h"
+
+1745173023 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\mecanicienspecialiste.h
+	"Mecanicien.h"
+	<vector>
+	<string>
+	<iostream>
+
+1745354543 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\voiture.h
+	"Vehicule.h"
+	<vector>
+
+1745355168 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\voitureelectrique.h
+	"Voiture.h"
+
+1745350961 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\moto.h
+	"Vehicule.h"
+	<string>
+
+1745317220 c:\users\maram\onedrive\desktop\codeblocks projects\testfinal\facture.h
+	<string>
+	<vector>
+	<iostream>
+	<map>
+	<fstream>
+	"Reparation.h"
+

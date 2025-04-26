@@ -1,0 +1,154 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+class VehiculeBase {
+  - string imma
+  - string marque
+  - string modele
+  - int annee
+  - string type
+  + VehiculeBase(string i, string m, string mod, int a, string t)
+  + VehiculeBase()
+  + string getImmatriculation() const
+  + string getType() const
+  + void setType(const string& t)
+  + virtual void afficherDetails() = 0
+  + virtual ~VehiculeBase()
+}
+
+class Vehicule {
+  - Reparation* derniereReparation
+  - vector<Reparation*> listeReparations
+  + Vehicule()
+  + Vehicule(const string& imma, const string& marque, const string& modele, int annee, string t)
+  + void afficherDetails()
+  + void ajouterReparation(Reparation* r)
+  + void afficherListeReparations() const
+  + void afficherDerniereReparation() const
+  + Vehicule& operator=(const Vehicule& v)
+  + friend ostream& operator<<(ostream& out, const Vehicule& v)
+  + friend istream& operator>>(istream& in, Vehicule& v)
+  + virtual ~Vehicule()
+}
+
+class Voiture {
+  - int nbPortes
+  - int nbPlaces
+  - vector<Mecanicien*> listeMecaniciens
+  + Voiture()
+  + Voiture(string i, string m, string mo, int a, string t, int np, int npl)
+  + virtual ~Voiture()
+  + void afficherDetails()
+  + virtual string getType() const
+  + friend ostream& operator<<(ostream& os, const Voiture& v)
+  + friend istream& operator>>(istream& is, Voiture& v)
+  + void sauvegarderDansFichier(const string& nomFichier) const
+  + static void chargerDepuisFichier(const string& nomFichier, vector<Voiture*>& voitures)
+}
+
+class VoitureElectrique {
+  - int autonomie
+  - float capaciteBatterie
+  - string type = "voitureelectrique"
+  + VoitureElectrique()
+  + VoitureElectrique(string imma, string m, string mod, int an, string t, int aut, float cb)
+  + void afficherDetails() override
+  + int getNbPortes() const
+  + int getNbPlaces() const
+  + float getAutonomie() const
+  + ~VoitureElectrique()
+  + friend ostream& operator<<(ostream& os, const VoitureElectrique& ve)
+  + friend istream& operator>>(istream& is, VoitureElectrique& ve)
+  + static void chargerDepuisFichier(const string& nomFichier, vector<Voiture*>& voitures)
+  + string getType() const override
+}
+
+class Reparation {
+  - int idReparation
+  - string problemeDetecte
+  - float cout_rep
+  - string dateEntree
+  - string dateSortie
+  + Reparation()
+  + Reparation(int id, string prob, float cout, string entree, string sortie)
+  + void ajouterReparation()
+  + void afficherDetails() const
+  + Reparation& operator=(const Reparation& r)
+  + friend ostream& operator<<(ostream& os, const Reparation& r)
+  + friend istream& operator>>(istream& is, Reparation& r)
+  + ~Reparation()
+}
+
+class Piece {
+  - string reference_piece
+  - string nom
+  - float prix
+  - int stock
+  + Piece()
+  + Piece(string r, string n, float p, int s)
+  + friend ostream& operator<<(ostream& os, const Piece& p)
+  + friend istream& operator>>(istream& is, Piece& p)
+}
+
+class Personne {
+  - string nom
+  - string prenom
+  - string telephone
+  + Personne(string n, string p, string t)
+  + ~Personne()
+  + friend ostream& operator<<(ostream& os, const Personne& p)
+  + friend istream& operator>>(istream& is, Personne& p)
+}
+
+class Client {
+  - string adresse
+  + Client()
+  + Client(string n, string p, string t, string a)
+  + friend ostream& operator<<(ostream& os, const Client& c)
+  + friend istream& operator>>(istream& is, Client& c)
+}
+
+class Employe {
+  - float salaire
+  + Employe(string n, string p, string t, float s)
+  + void afficherSalaire()
+}
+
+class Mecanicien {
+  - int experience
+  + Mecanicien()
+  + Mecanicien(string n, string p, string t, int exp)
+  + friend ostream& operator<<(ostream& os, const Mecanicien& m)
+  + friend istream& operator>>(istream& is, Mecanicien& m)
+}
+
+class MecanicienSpecialiste {
+  - string domaineExpertise
+  + MecanicienSpecialiste(string n, string p, string t, int exp, string domaine)
+  + friend ostream& operator<<(ostream& os, const MecanicienSpecialiste& ms)
+  + friend istream& operator>>(istream& is, MecanicienSpecialiste& ms)
+}
+
+class Garage {
+  - static int nombreClients
+  - vector<Mecanicien*> mecaniciens
+  - vector<Client*> clients
+  + Garage()
+  + ~Garage()
+  + void ajouterMecanicien(Mecanicien* m)
+  + void ajouterClient(Client* c)
+  + const vector<Mecanicien*>& obtenirMecaniciens() const
+  + const vector<Client*>& obtenirClients() const
+  + static void afficherNombreClients()
+}
+
+VehiculeBase <|-- Vehicule
+Vehicule <|-- Voiture
+Voiture <|-- VoitureElectrique
+Personne <|-- Client
+Personne <|-- Employe
+Mecanicien <|-- MecanicienSpecialiste
+Garage "1" *-- "many" Mecanicien
+Garage "1" *-- "many" Client
+
+@enduml
